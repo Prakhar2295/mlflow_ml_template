@@ -40,7 +40,7 @@ def main(alpha,l1_ratio):
     train_y = train[[TARGET]]
     test_y = test[[TARGET]]
     ## mlflow implemenation
-    #mlflow.set_tracking_uri(uri='file:///D:/FSDS/MAchine_Learning/MLFLOW_ML_EXAMPLE/mlruns_1')
+    mlflow.set_tracking_uri("file://D:\FSDS\MAchine_Learning\MLFLOW_ML_EXAMPLE\mlruns1")    ## for local file path of our choice
     with mlflow.start_run():
         
         mlflow.log_param("alpha",alpha)
@@ -59,6 +59,7 @@ def main(alpha,l1_ratio):
         
         
         mlflow.sklearn.log_model(model,"model")
+        print("done")
            
 
 if __name__ == "__main__":
