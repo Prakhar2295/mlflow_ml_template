@@ -1,10 +1,11 @@
 import os
+import numpy as np
 
 
-p1s = range(0,5)
-p2s = range(5,10)
+alpha_s = np.linspace(0.1,1,5)
+l1_ratio_s = np.linspace(0.1,1,5)
 
-for p1 in p1s:
-    for p2 in p2s:
-        print(f"logging experiment for p1:{p1} and p2:{p2}")
-        os.system(f"python demo.py -p1 {p1} -p2 {p2}")
+for a in alpha_s:
+    for l1 in l1_ratio_s:
+        print(f"logging experiment for p1:{a} and p2:{l1}")
+        os.system(f"python demo.py -a {a} -l1 {l1}")
